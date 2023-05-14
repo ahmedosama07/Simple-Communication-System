@@ -19,9 +19,11 @@ title('Signal Phase in frequency domain')
 N = cal_noise(y);
 output = y + N;
 %%
-Y_f = fftshift(fft(output));
-Yfmg = abs(Y_f);
-f_vec = linspace(-fs/2, fs/2, length(Y_f));
+sound(output,fs);
+pause(25);
+%%
+[Ymg, Yphase, f_vec] = freq_domain(output, fs);
+figure(2);
 plot(f_vec, Yfmg);
 %% Reciever
 final = reciever(output, fs);

@@ -1,7 +1,9 @@
-%brief: This function acts as the tansmitter of the system
-%param: it 2 parameters: signal, t->time
-%return: it the output of the convolution
 function [Y, t] = channel(signal, t, fs)
+%channel Summary of this function goes here
+%   brief: This function acts as the channel of the system
+%   param: param: it 3 parameters: signal, t - >time, fs -> sampling
+%   frequency
+%   return: it returns the output of the convolution
 choice = 0;
 while choice == 0
     fprintf("Please choose an impulse response:\n1-Delta Function\n2-exp(-2pi*5000t)\n3-exp(-2pi*1000t)\n4-2delta(t) + delta(t-1)\n\n");

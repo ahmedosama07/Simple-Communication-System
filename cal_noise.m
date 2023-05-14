@@ -4,5 +4,5 @@
 function Noise = cal_noise(y)
     fprintf("Please input the 'sigma' of the noise signal\n");
     sigma = input("Sigma = ");
-    Noise = sigma .* randn(length(y), 1);
+    Noise = sigma * randn(size(y));
 end
