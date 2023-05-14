@@ -1,7 +1,9 @@
-%brief: This function acts as the tansmitter of the system 
+%brief: This function acts as the tansmitter of the system
 %param: it 2 parameters: signal, t->time
 %return: it the output of the convolution
 function [Y, t] = channel(signal, t, fs)
+choice = 0;
+while choice == 0
     fprintf("Please choose an impulse response:\n1-Delta Function\n2-exp(-2pi*5000t)\n3-exp(-2pi*1000t)\n4-2delta(t) + delta(t-1)\n\n");
     choice = input("choice: ");
     switch (choice)
@@ -16,5 +18,7 @@ function [Y, t] = channel(signal, t, fs)
         otherwise
             fprintf("Invalid Input");
     end
-    [Y, t] = cal_output(signal, h, fs);
+end
+
+[Y, t] = cal_output(signal, h, fs);
 end
