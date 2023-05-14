@@ -30,3 +30,4 @@ final = reciever(output, fs);
 figure(3);
 plot(t, final);
 sound(final, fs);
+audiowrite('out.wav', final, fs);
