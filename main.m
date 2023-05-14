@@ -24,7 +24,9 @@ pause(25);
 %%
 [Ymg, Yphase, f_vec] = freq_domain(output, fs);
 figure(2);
-plot(f_vec, Yfmg);
+plot(f_vec, Ymg);
 %% Reciever
 final = reciever(output, fs);
+figure(3);
+plot(t, final);
 sound(final, fs);
