@@ -6,13 +6,13 @@ function [Y, t] = channel(signal, t, fs)
     choice = input("choice: ");
     switch (choice)
         case 1
-            h = (t == 0);
+            h = delta(t);
         case 2
             h = exp(-2 * pi * 5000 .* t);
         case 3
             h = exp(-2 * pi * 1000 .* t);
         case 4
-            h = [2 zeros(1,1*fs -2) 1];
+            h = 2 .* delta(t) + 0.5 .* delta(t-1);
         otherwise
             fprintf("Invalid Input");
     end
