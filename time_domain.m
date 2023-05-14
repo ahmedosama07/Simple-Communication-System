@@ -4,9 +4,6 @@
 %                              f_sampling -> sampling frequency
 %                              signal     -> signal to be plotted
 %return : void
-function t = time_domain(t_sec, f_sampling, signal)
+function t = time_domain(t_sec, f_sampling)
     t = linspace(0, t_sec, t_sec * f_sampling);
-    figure;
-    plot(t, signal);
-    title('Signal in Time Domain');
 end
