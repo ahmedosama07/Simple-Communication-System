@@ -5,6 +5,7 @@ function [x, fs, t] = transmitter(filename)
 %   return: it returns the sound file and the sampling frequency
 [x, fs] = audioread(filename);
 sound(x, fs);
+x=x(:,1);
 t_sec = duration_sec(x, fs);
 t = time_domain(t_sec, fs);
 end
