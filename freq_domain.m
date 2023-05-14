@@ -6,12 +6,12 @@ function [Xmg, Xphase, f_vec] = freq_domain(signal, f_sampling)
 %                              signal     -> signal to be plotted
 %return : Xmg       ->    magnitude
 %         Xphase    ->    phase
-    X_freq = fftshift(fft(signal));
-    
-    
-    N = length(signal);
-    Xmg = abs(X_freq);
-    Xphase = angle(X_freq);
+X_freq = fftshift(fft(signal));
 
-    f_vec = linspace(-f_sampling/2, f_sampling/2, N);
+
+N = length(signal);
+Xmg = abs(X_freq);
+Xphase = angle(X_freq);
+
+f_vec = linspace(-f_sampling/2, f_sampling/2, N);
 end
