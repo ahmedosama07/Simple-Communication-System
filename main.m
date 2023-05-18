@@ -45,7 +45,7 @@ title('sound file after adding noise in frequency domain')
 %% Reciever
 final = reciever(output, fs);
 sound(final, fs);
-[finalMg, finalPhase, f_vec] = freq_domain(output, fs);
+[finalMg, finalPhase, f_vec] = freq_domain(final, fs);
 figure(4)
 subplot(2,1,1)
 plot(t,final)
