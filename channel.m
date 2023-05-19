@@ -1,4 +1,4 @@
-function [Y, ty] = channel(signal, t, fs)
+function [Y, ty] = channel(signal, t, fs, dim)
 %channel Summary of this function goes here
 %   brief: This function acts as the channel of the system
 %   param: param: it 3 parameters: signal, t - >time, fs -> sampling
@@ -23,5 +23,15 @@ while choice == 0
     end
 end
 
-[Y, ty] = cal_output(signal, h, fs);
+if dim == 2
+    Y1 = cal_output(signal(:,1), h);
+    Y2 = cal_output(signal(:,2), h);
+    Y = [Y1; Y2];
+else
+    Y = cal_output(signal, h, fs);
+end
+
+Y = Y(:,1:length(signal))';
+t_end = length(Y)./fs;
+ty = linspace(0,t_end, t_end*fs);
 end

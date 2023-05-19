@@ -1,4 +1,4 @@
-function [output, t_conv] = cal_output(signal, h_t, fs)
+function output = cal_output(signal, h_t)
 %channel Summary of this function goes here
 %   brief: This function calculates the convolution of the signal and
 %   channel response
@@ -7,6 +7,4 @@ function [output, t_conv] = cal_output(signal, h_t, fs)
 %   return: it returns the output signal and time
     x_t = signal(:);
     output = conv(x_t, h_t);
-    t_end = length(output)./fs;
-    t_conv = linspace(0,t_end, t_end*fs);
 end
