@@ -30,8 +30,7 @@ if dim == 2
 else
     Y = cal_output(signal, h, fs);
 end
-
-Y = Y(:,1:length(signal))';
+Y = Y';
 t_end = length(Y)./fs;
 ty = linspace(0,t_end, t_end*fs);
 end
