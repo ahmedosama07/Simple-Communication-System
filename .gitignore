@@ -6,3 +6,6 @@
 *.zip
 *.png
 *.tmp
+*.prj
+*.html
+/SimpleCommunicationSystem/*
