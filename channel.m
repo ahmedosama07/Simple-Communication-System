@@ -13,13 +13,13 @@ value = inputsdlg('Impulse response: ', 'Channel', formats);
 choice = value{1};
 switch (choice)
     case 1
-        h = delta(t);
+        h = (t == 0);
     case 2
         h = exp(-2 * pi * 5000 .* t);
     case 3
         h = exp(-2 * pi * 1000 .* t);
     case 4
-        h = 2 .* delta(t) + 0.5 .* delta(t-1);
+        h = (2 .* (t == 0)) + 0.5 .* (t == 1);
 end
 
 
