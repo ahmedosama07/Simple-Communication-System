@@ -17,10 +17,10 @@ title('Signal Phase in frequency domain');
 
 %% channel
 [y_conv, t_conv] = channel(x, t, fs, size(x, 2));
-[Ymg, Yphase, f_vec] = freq_domain(y_conv, fs);
+[Ymg, Yphase, f_vec] = freq_domain(y_conv(1:length(x), :), fs);
 figure(2);
 subplot(3,1,1);
-plot(t_conv, y_conv);
+plot(t_conv, y_conv(1:length(x)));
 title('Signal in time domain after applying system');
 subplot(3,1,2);
 plot(f_vec, Ymg);
