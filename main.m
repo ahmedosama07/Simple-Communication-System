@@ -1,7 +1,7 @@
 clear all;
 clc;
 %% transmitter
-[x, fs, t] = transmitter('dawn of faith.mpeg');
+[x, fs, t] = transmitter('voice.opus');
 pause(25);
 [Xmg, Xphase, f_vec] = freq_domain(x, fs);
 figure(1);

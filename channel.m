@@ -28,7 +28,7 @@ if dim == 2
     Y2 = cal_output(signal(:,2), h);
     Y = [Y1; Y2];
 else
-    Y = cal_output(signal, h, fs);
+    Y = cal_output(signal, h);
 end
 Y = Y';
 t_end = length(Y)./fs;
